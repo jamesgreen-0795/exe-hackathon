@@ -25,8 +25,10 @@ func get_input():
 	var dir = 0
 	if Input.is_action_pressed("ui_right"):
 		dir += 1
+		get_node("Sprite").set_flip_h(false)
 	if Input.is_action_pressed("ui_left"):
 		dir -= 1
+		get_node("Sprite").set_flip_h(true)
 	if dir != 0:
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
