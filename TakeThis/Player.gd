@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-export (int) var speed = 200
-export (Vector2) var velocity = Vector2()
+export (int) var speed = 100
+export (int) var maxSpeed = 200
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -12,16 +12,15 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
-	get_input()
-	velocity = velocity
+	update_input(delta)
 
-func get_input():
-    velocity = Vector2()
-    if Input.is_action_pressed('right'):
-        velocity.x += 1
-    if Input.is_action_pressed('left'):
-        velocity.x -= 1
-
+func update_input(delta):
+	
+    if Input.is_action_pressed('ui_right') and self.linear_velocity.x < maxSpeed:
+        self.linear_velocity.x += speed * delta
+    if Input.is_action_pressed('ui_left') and self.linear_velocity.x > -maxSpeed :
+        self.linear_velocity.x -= speed * delta
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
