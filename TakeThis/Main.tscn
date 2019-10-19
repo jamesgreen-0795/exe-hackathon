@@ -143,9 +143,9 @@ position = Vector2( 20, 390 )
 
 [node name="MovingWall" parent="Walls" instance=ExtResource( 2 )]
 position = Vector2( 260, 480 )
-pointA = Vector2( 240, 540 )
-pointB = Vector2( 400, 540 )
-speed = 300
+pointA = Vector2( 400, 540 )
+pointB = Vector2( 400, 300 )
+speed = 100
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 30, -210 )
