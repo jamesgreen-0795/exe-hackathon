@@ -4,6 +4,7 @@
 [ext_resource path="res://assets/test-assets/green-square.png" type="Texture" id=2]
 
 [sub_resource type="PhysicsMaterial" id=1]
+friction = 0.25
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 32 )

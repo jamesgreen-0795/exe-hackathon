@@ -13,6 +13,7 @@ func _ready():
 
 func _physics_process(delta):
 	update_input(delta)
+	self.angular_velocity = 0.0
 
 func update_input(delta):
 	
