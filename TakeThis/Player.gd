@@ -5,6 +5,7 @@ export (int) var jump_speed = -350
 export (int) var gravity = 1000
 
 var velocity = Vector2.ZERO
+var Bullet = preload("res://BasicBullet.tscn")
 
 export (float, 0, 1.0) var friction = 0.5
 export (float, 0, 1.0) var acceleration = 0.25
@@ -19,6 +20,9 @@ func get_input():
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
+	if Input.is_mouse_button_pressed(1):
+		_create_bullet()
+
 
 func _physics_process(delta):
 	get_input()
@@ -27,3 +31,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = jump_speed
+
+func _create_bullet():
+	var b = Bullet.instance()
+	b.position = position
+	get_parent().add_child(b)
