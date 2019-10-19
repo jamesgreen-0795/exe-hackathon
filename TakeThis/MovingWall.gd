@@ -12,4 +12,14 @@ func _ready():
 	step = (pointB - pointA) / speed
 	
 func _process(delta):
-	global_position += step
+	if direction:
+		if ((pointB * -1) - (global_position * -1)) > step:
+			global_position += step
+		else:
+			direction = 0
+	else:
+		if (pointA - global_position) > step:
+			global_position -= step
+		else:
+			direction = 0
+	
