@@ -3,6 +3,8 @@ extends RigidBody2D
 export (int) var speed = 100
 export (int) var maxSpeed = 200
 
+var Bullet = preload("res://BasicBullet.tscn")
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -14,12 +16,19 @@ func _ready():
 func _physics_process(delta):
 	update_input(delta)
 
+func _create_bullet():
+	var b = Bullet.instance()
+	b.position = position
+	get_parent().add_child(b)
+
 func update_input(delta):
 	
-    if Input.is_action_pressed('ui_right') and self.linear_velocity.x < maxSpeed:
-        self.linear_velocity.x += speed * delta
-    if Input.is_action_pressed('ui_left') and self.linear_velocity.x > -maxSpeed :
-        self.linear_velocity.x -= speed * delta
+	if Input.is_action_pressed('ui_right') and self.linear_velocity.x < maxSpeed:
+		self.linear_velocity.x += speed * delta
+	if Input.is_action_pressed('ui_left') and self.linear_velocity.x > -maxSpeed :
+		self.linear_velocity.x -= speed * delta
+	if Input.is_mouse_button_pressed(1):
+		_create_bullet()
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
