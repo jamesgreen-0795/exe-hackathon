@@ -7,6 +7,8 @@ export var speed :int #Number of frames
 var direction
 var step
 
+class_name Enemy
+
 func _ready():
 	global_position = pointA
 	step = (pointB - pointA) / speed
