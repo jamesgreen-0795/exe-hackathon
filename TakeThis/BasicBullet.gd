@@ -3,6 +3,7 @@ extends RigidBody2D
 const speed = 500
 var target
 var velocity = Vector2()
+var itemType
 
 func _ready():
 	target = get_global_mouse_position()
@@ -16,4 +17,7 @@ func _on_BasicBullet_body_entered(body):
 	if !(body.name == "Player"):
 		queue_free()
 	if body is Enemy:
-		body.die()
+		if itemType == "antigrav":
+			body.remove_gravity()
+		else:
+			body.die()

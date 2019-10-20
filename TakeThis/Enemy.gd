@@ -7,6 +7,8 @@ export var speed :int #Number of frames
 var direction
 var step
 
+var has_gravity = true
+
 class_name Enemy
 
 func _ready():
@@ -16,18 +18,19 @@ func _ready():
 	get_node("Sprite").set_flip_h(true)
 	
 func _process(delta):
-	if direction == 1:
-		if exceeded(global_position, step, pointB):
-			global_position += step
+	if has_gravity:
+		if direction == 1:
+			if exceeded(global_position, step, pointB):
+				global_position += step
+			else:
+				direction = 0
+				get_node("Sprite").set_flip_h(false)
 		else:
-			direction = 0
-			get_node("Sprite").set_flip_h(false)
-	else:
-		if exceeded(global_position, -step, pointA):
-			global_position -= step
-		else:
-			direction = 1
-			get_node("Sprite").set_flip_h(true)
+			if exceeded(global_position, -step, pointA):
+				global_position -= step
+			else:
+				direction = 1
+				get_node("Sprite").set_flip_h(true)
 
 func exceeded(current, s, target):
 	if s.x > 0:
@@ -46,6 +49,12 @@ func exceeded(current, s, target):
 
 func die():
 	queue_free()
+
+func remove_gravity():
+	gravity_scale = -1
+	angular_velocity = 10
+	linear_velocity.x = 0
+	has_gravity = false
 
 func _on_Enemy_body_entered(body):
 	if body.name == "Player":

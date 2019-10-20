@@ -12,6 +12,7 @@ var last_direction = 0
 
 export (float, 0, 1.0) var friction = 0.5
 export (float, 0, 1.0) var acceleration = 0.25
+export var itemType = "spoon"
 
 signal player_stopped
 signal player_left
@@ -66,6 +67,7 @@ func player_direction(x_component):
 func _create_bullet():
 	var b = Bullet.instance()
 	b.position = position
+	b.itemType = itemType
 	get_parent().add_child(b)
 
 func die():

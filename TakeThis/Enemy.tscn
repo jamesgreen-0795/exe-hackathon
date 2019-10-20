@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enemy.gd" type="Script" id=1]
 [ext_resource path="res://AnimationPlayer.gd" type="Script" id=2]
 [ext_resource path="res://assets/enemy1.png" type="Texture" id=3]
+
+[sub_resource type="PhysicsMaterial" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
@@ -27,6 +29,7 @@ tracks/0/keys = {
 [node name="Enemy" type="RigidBody2D"]
 collision_layer = 3
 collision_mask = 3
+physics_material_override = SubResource( 3 )
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )

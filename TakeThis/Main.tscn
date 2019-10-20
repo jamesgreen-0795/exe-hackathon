@@ -227,6 +227,7 @@ position = Vector2( 20, 390 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1790, -140 )
+itemType = "antigrav"
 
 [node name="Background" type="CanvasLayer" parent="."]
 
@@ -240,8 +241,8 @@ texture = ExtResource( 3 )
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 518.946, 23.696 )
-pointA = Vector2( 480, 540 )
-pointB = Vector2( 800, 540 )
+pointA = Vector2( 480, 560 )
+pointB = Vector2( 800, 560 )
 speed = 300
 
 [node name="Enemy2" parent="." instance=ExtResource( 4 )]
