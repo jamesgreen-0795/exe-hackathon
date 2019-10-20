@@ -100,7 +100,7 @@ func die():
 	
 	if PlayerGlobals.lives < 0:
 		PlayerGlobals.lives = PlayerGlobals.default_lives
-		get_tree().change_scene("res://Lvl1.tscn")
+		get_tree().change_scene("res://MainMenu.tscn")
 	else:
 		get_tree().change_scene("res://" + level + ".tscn")
 	queue_free()
