@@ -12,6 +12,7 @@
 position = Vector2( -250, 541.325 )
 fall_death = 1000
 level = "Lvl3"
+itemType = "antigrav"
 
 [node name="Floors" type="Node" parent="."]
 
@@ -19,25 +20,16 @@ level = "Lvl3"
 position = Vector2( 20, 580 )
 
 [node name="Floor4" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 340, 500 )
+position = Vector2( 334, 480 )
 
 [node name="Floor22" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 260, 500 )
+position = Vector2( 260, 480 )
 
 [node name="Floor31" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 60, 580 )
 
-[node name="Floor5" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( -20, 500 )
-
-[node name="Floor23" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( -60, 500 )
-
-[node name="Floor24" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( -60, 480 )
-
 [node name="Floor33" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( -60, 454 )
+position = Vector2( -20, 426.8 )
 
 [node name="Floor37" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( -60, 426.8 )
@@ -70,43 +62,46 @@ position = Vector2( -220, 500 )
 position = Vector2( -260, 500 )
 
 [node name="Floor21" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 300, 500 )
+position = Vector2( 300, 480 )
 
 [node name="Floor29" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 100, 580 )
-
-[node name="Floor6" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 20, 500 )
 
 [node name="Floor30" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 140, 580 )
 
 [node name="Floor7" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 60, 500 )
+position = Vector2( 60, 480 )
+
+[node name="Floor8" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 100, 480 )
+
+[node name="Floor14" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 60, 454 )
+
+[node name="Floor17" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 60, 426.4 )
 
 [node name="Floor32" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 180, 580 )
-
-[node name="Floor8" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 100, 500 )
 
 [node name="Floor27" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 220, 580 )
 
 [node name="Floor9" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 140, 500 )
+position = Vector2( 140, 480 )
 
 [node name="Floor28" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 260, 580 )
 
 [node name="Floor15" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 180, 500 )
+position = Vector2( 180, 480 )
 
 [node name="Floor25" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 300, 580 )
 
 [node name="Floor16" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 220, 500 )
+position = Vector2( 220, 480 )
 
 [node name="Floor26" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 340, 580 )
@@ -150,6 +145,18 @@ pointA = Vector2( 80, 550 )
 pointB = Vector2( -250, 550 )
 speed = 140
 
+[node name="Enemy5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 350, 450 )
+pointA = Vector2( 140, 450 )
+pointB = Vector2( 350, 450 )
+speed = 30
+
+[node name="Enemy6" parent="." instance=ExtResource( 4 )]
+position = Vector2( -230, 400 )
+pointA = Vector2( 50, 400 )
+pointB = Vector2( -230, 400 )
+speed = 30
+
 [node name="Enemy4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 10, 550 )
 pointA = Vector2( 10, 550 )
@@ -158,3 +165,6 @@ speed = 100
 
 [node name="HeartBody" parent="." instance=ExtResource( 5 )]
 position = Vector2( -261.25, 440.8 )
+
+[node name="Floor" parent="." instance=ExtResource( 2 )]
+position = Vector2( 20, 426.8 )
