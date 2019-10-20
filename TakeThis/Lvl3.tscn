@@ -1,26 +1,85 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/background.jpg" type="Texture" id=3]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Heart.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=6]
 
 [node name="Lvl3" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -250, 541.325 )
+position = Vector2( -260, 537.6 )
 fall_death = 1000
 level = "Lvl3"
 itemType = "antigrav"
 
 [node name="Floors" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Floor3" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 20, 580 )
 
 [node name="Floor4" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 340, 500 )
+
+[node name="Floor5" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 720, 400 )
+
+[node name="Floor6" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 760, 400 )
+
+[node name="Floor23" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 800, 400 )
+
+[node name="Floor24" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 840, 400 )
+
+[node name="Floor45" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 880, 400 )
+
+[node name="Floor48" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 920, 400 )
+
+[node name="Floor49" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 960, 400 )
+
+[node name="Floor50" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1000, 400 )
+
+[node name="Floor51" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1000, 426 )
+
+[node name="Floor52" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1000, 454 )
+
+[node name="Floor53" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1000, 480 )
+
+[node name="Floor54" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1000, 510 )
+
+[node name="Floor55" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1000, 540 )
+
+[node name="Floor56" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1040, 541.325 )
+
+[node name="Floor57" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1080, 541.325 )
+
+[node name="Floor58" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1120, 541.325 )
+
+[node name="Floor59" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1160, 541.325 )
+
+[node name="Floor60" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1200, 541.325 )
+
+[node name="Floor61" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1240, 541.325 )
 
 [node name="Floor22" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 260, 500 )
@@ -151,6 +210,31 @@ pointA = Vector2( 80, 550 )
 pointB = Vector2( -250, 550 )
 speed = 140
 
+[node name="Enemy5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 350, 450 )
+pointA = Vector2( 140, 450 )
+pointB = Vector2( 350, 450 )
+speed = 30
+
+[node name="Enemy8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1000, 370 )
+pointA = Vector2( 140, 450 )
+pointB = Vector2( 350, 450 )
+speed = 30
+
+[node name="Enemy7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 514, 550 )
+rotation = -0.689268
+pointA = Vector2( 680, 380 )
+pointB = Vector2( 510, 550 )
+speed = 30
+
+[node name="Enemy6" parent="." instance=ExtResource( 4 )]
+position = Vector2( -230, 400 )
+pointA = Vector2( 50, 400 )
+pointB = Vector2( -230, 400 )
+speed = 30
+
 [node name="Enemy4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 10, 550 )
 pointA = Vector2( 10, 550 )
@@ -159,3 +243,5 @@ speed = 100
 
 [node name="HeartBody" parent="." instance=ExtResource( 5 )]
 position = Vector2( -261.25, 440.8 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 6 )]
