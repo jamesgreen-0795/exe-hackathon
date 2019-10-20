@@ -43,6 +43,11 @@ func get_input():
 
 
 func _physics_process(delta):
+	
+	# custom parallaxing based on player position
+	var backgroundNode = get_node("Camera2D/CanvasLayer/ParallaxBackground/Sprite")
+	backgroundNode.position.x = - ( (position.x * 0.4) - (backgroundNode.get_viewport().size.x / 2));
+	
 	get_input()
 	
 	velocity.y += gravity * delta

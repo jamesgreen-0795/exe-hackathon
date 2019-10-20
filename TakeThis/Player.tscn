@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/background.png" type="Texture" id=2]
+[ext_resource path="res://assets/background.jpg" type="Texture" id=2]
 [ext_resource path="res://assets/player.png" type="Texture" id=3]
 [ext_resource path="res://assets/spoon.png" type="Texture" id=4]
 [ext_resource path="res://AnimationSpoon.gd" type="Script" id=5]
@@ -54,6 +54,8 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.8, 0.8 )
+drag_margin_h_enabled = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
