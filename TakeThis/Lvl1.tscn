@@ -17,7 +17,6 @@ position = Vector2( 116.849, 149.055 )
 fall_death = 1000
 
 [node name="Floors" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Floor" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 20, 585 )
@@ -44,18 +43,25 @@ position = Vector2( 140, 585 )
 
 [node name="Floor37" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1180, 440 )
+is_end = true
 
 [node name="Floor5" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 180, 585 )
 
 [node name="Floor9" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 2825.78, 218.938 )
+is_end = true
+is_right = false
 
 [node name="Floor79" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1380, 460 )
+is_end = true
+is_right = false
 
 [node name="Floor84" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1620, 420 )
+is_end = true
+is_right = false
 
 [node name="Floor6" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 220, 585 )
@@ -116,12 +122,14 @@ position = Vector2( 2985.78, 218.938 )
 
 [node name="Floor80" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1540, 460 )
+is_end = true
 
 [node name="Floor86" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1780, 420 )
 
 [node name="Floor89" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1820, 420 )
+is_end = true
 
 [node name="Floor91" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1900, 420 )
@@ -206,6 +214,8 @@ position = Vector2( 3585.78, 218.938 )
 
 [node name="Floor30" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 980, 440 )
+is_end = true
+is_right = false
 
 [node name="Floor42" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 3625.78, 218.938 )
@@ -215,6 +225,7 @@ position = Vector2( 1020, 440 )
 
 [node name="Floor40" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 3665.78, 218.938 )
+is_end = true
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false

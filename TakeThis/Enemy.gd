@@ -35,11 +35,13 @@ func _process(delta):
 				global_position += step
 			else:
 				direction = 0
+				global_position = pointB
 				get_node("Sprite").set_flip_h(false)
 		else:
 			if exceeded(global_position, -step, pointA):
 				global_position -= step
 			else:
+				global_position = pointA
 				direction = 1
 				get_node("Sprite").set_flip_h(true)
 
