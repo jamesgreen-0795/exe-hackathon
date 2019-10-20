@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/background.jpg" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/spoon.png" type="Texture" id=4]
 [ext_resource path="res://AnimationSpoon.gd" type="Script" id=5]
 [ext_resource path="res://WalkingParticles.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/mini-fireball.png" type="Texture" id=7]
+[ext_resource path="res://AnimationFireballItem.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.9024, 20 )
@@ -44,6 +46,23 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4 ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "ItemFireball"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ItemFireball:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 90, 70 )
 script = ExtResource( 1 )
@@ -79,6 +98,7 @@ frame = 3
 anims/Walk = SubResource( 2 )
 
 [node name="ItemSpoon" type="Sprite" parent="."]
+visible = false
 position = Vector2( 20, -10 )
 scale = Vector2( 0.15, 0.15 )
 z_index = 10
@@ -92,5 +112,17 @@ script = ExtResource( 5 )
 
 [node name="PlayerParticles" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, 21 )
+
+[node name="ItemFireball" type="Sprite" parent="."]
+position = Vector2( 20, -10 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 7 )
+vframes = 8
+frame = 3
+
+[node name="AnimationFireballItem" type="AnimationPlayer" parent="."]
+playback_speed = 1.5
+anims/ItemFireball = SubResource( 4 )
+script = ExtResource( 8 )
 [connection signal="player_stop" from="." to="PlayerParticles" method="stop"]
 [connection signal="player_walk_ground" from="." to="PlayerParticles" method="start"]

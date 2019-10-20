@@ -16,16 +16,20 @@ var stopped = 1
 
 export (int) var shoot_cooldown = 50
 var current_cooldown = 0
-onready var nodeItemSpoon = get_node("ItemSpoon")
+onready var nodeItem;
 
 export (float, 0, 1.0) var friction = 0.5
 export (float, 0, 1.0) var acceleration = 0.25
-export var itemType = "spoon"
+export var itemType = "fireball"
 
 signal player_walk_ground
 signal player_stop
 
 func _ready():
+	if (itemType == "spoon"):
+		nodeItem = get_node("ItemSpoon")
+	if (itemType == "fireball"):
+		nodeItem = get_node("ItemFireball")
 	play_animation("Walk")
 	
 func play_animation(anim):
@@ -36,13 +40,13 @@ func get_input():
 	if Input.is_action_pressed("ui_right"):
 		dir += 1
 		get_node("Sprite").set_flip_h(false)
-		nodeItemSpoon.set_flip_h(false)
-		nodeItemSpoon.position.x = abs(nodeItemSpoon.position.x)
+		nodeItem.set_flip_h(false)
+		nodeItem.position.x = abs(nodeItem.position.x)
 	if Input.is_action_pressed("ui_left"):
 		dir -= 1
 		get_node("Sprite").set_flip_h(true)
-		nodeItemSpoon.set_flip_h(true)
-		nodeItemSpoon.position.x = -abs(nodeItemSpoon.position.x)
+		nodeItem.set_flip_h(true)
+		nodeItem.position.x = -abs(nodeItem.position.x)
 	if dir != 0:
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
@@ -99,15 +103,15 @@ func player_direction(x_component):
 
 func _create_bullet():
 	var b = Bullet.instance()
-	b.position = position + nodeItemSpoon.transform.get_origin()
-	b.itemType = itemType
+	b.position = position + nodeItem.transform.get_origin()
+	b.setItemType(itemType)
 	get_parent().add_child(b)
 
 func show_item():
-	nodeItemSpoon.show()
+	nodeItem.show()
 
 func hide_item():
-	nodeItemSpoon.hide()
+	nodeItem.hide()
 
 func die():
 	PlayerGlobals.lives -= 1

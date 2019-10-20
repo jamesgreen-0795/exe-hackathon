@@ -13,6 +13,15 @@ func _ready():
 	linear_velocity = (target - global_position).normalized() * speed
 	pass
 
+func setItemType(type):
+	itemType = type
+	
+	if (itemType == "spoon"):
+		get_node("SpriteSpoonBullet").visible = true
+	if (itemType == "fireball"):
+		get_node("SpriteFireballBullet").visible = true
+	
+	# Update sprite here
 
 func _on_BasicBullet_body_entered(body):
 	var particles = scene.instance()
