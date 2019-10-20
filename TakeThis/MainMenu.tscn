@@ -5,6 +5,10 @@
 [ext_resource path="res://start_pressed.png" type="Texture" id=3]
 
 [sub_resource type="GDScript" id=1]
+script/source = "extends TextureButton
+
+func _pressed():
+	get_tree().change_scene(\"res://Lvl1.tscn\")"
 
 [node name="TextureRect" type="TextureRect"]
 margin_right = 40.0

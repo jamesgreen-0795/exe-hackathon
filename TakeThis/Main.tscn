@@ -8,7 +8,7 @@ script/source = "extends Sprite
 
 #var input_states = preload(\"res://scripts/input_states.gd\")
 
-var click = input_states.new(\"click\")
+
 onready var Hero = get_tree().get_root().get_node(\"/Main/Lvl1\")
 
 func _ready():

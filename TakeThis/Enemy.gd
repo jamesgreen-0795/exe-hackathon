@@ -8,6 +8,7 @@ var direction
 var step
 
 var has_gravity = true
+var is_dead = false
 
 class_name Enemy
 
@@ -18,6 +19,16 @@ func _ready():
 	get_node("Sprite").set_flip_h(true)
 	
 func _process(delta):
+	
+	if is_dead:
+		var addedRotation = 10
+		if (direction == 0):
+			addedRotation = -addedRotation
+		rotation_degrees += addedRotation
+		linear_velocity.x = 0
+		get_node("Sprite").modulate.a -= 0.1
+		get_node("Sprite").modulate.r += 5
+	
 	if has_gravity:
 		if direction == 1:
 			if exceeded(global_position, step, pointB):
@@ -48,7 +59,10 @@ func exceeded(current, s, target):
 	return true
 
 func die():
-	queue_free()
+	is_dead = true;
+	var tween = get_node("Tween")
+	tween.interpolate_callback(self, 0.25, "queue_free")
+	tween.start()
 
 func remove_gravity():
 	gravity_scale = -1
