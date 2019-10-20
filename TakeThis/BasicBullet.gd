@@ -16,13 +16,18 @@ func _ready():
 func setItemType(type):
 	itemType = type
 	
+	get_node("SpriteSpoonBullet").visible = false
+	get_node("SpriteFireballBullet").visible = false
+	get_node("SpriteAntigravBullet").visible = false
+	
 	if itemType == "spoon":
 		get_node("SpriteSpoonBullet").visible = true
-		get_node("SpriteFireballBullet").visible = false
 	
 	if itemType == "fireball":
 		get_node("SpriteFireballBullet").visible = true
-		get_node("SpriteSpoonBullet").visible = false
+	
+	if itemType == "antigrav":
+		get_node("SpriteAntigravBullet").visible = true
 	
 	# Update sprite here
 

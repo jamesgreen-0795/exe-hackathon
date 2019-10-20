@@ -12,6 +12,7 @@
 position = Vector2( -250, 541.325 )
 fall_death = 1000
 level = "Lvl3"
+itemType = "antigrav"
 
 [node name="Floors" type="Node" parent="."]
 

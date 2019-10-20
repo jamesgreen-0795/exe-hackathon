@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://BasicBullet.gd" type="Script" id=1]
 [ext_resource path="res://assets/spoon.png" type="Texture" id=2]
 [ext_resource path="res://assets/mini-fireball.png" type="Texture" id=3]
 [ext_resource path="res://AnimationPlayerFireball.gd" type="Script" id=4]
+[ext_resource path="res://assets/bullet.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 0 )
@@ -44,6 +45,7 @@ texture = ExtResource( 2 )
 hframes = 5
 
 [node name="SpriteFireballBullet" type="Sprite" parent="."]
+visible = false
 position = Vector2( -7, 0 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
@@ -54,5 +56,8 @@ frame = 1
 playback_speed = 1.5
 anims/Fireball = SubResource( 2 )
 script = ExtResource( 4 )
+
+[node name="SpriteAntigravBullet" type="Sprite" parent="."]
+texture = ExtResource( 5 )
 [connection signal="body_entered" from="." to="." method="_on_BasicBullet_body_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_BasicBullet_body_shape_entered"]

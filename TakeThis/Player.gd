@@ -30,6 +30,8 @@ func _ready():
 		nodeItem = get_node("ItemSpoon")
 	if (itemType == "fireball"):
 		nodeItem = get_node("ItemFireball")
+	if (itemType == "antigrav"):
+		nodeItem = get_node("ItemAntigrav")
 	play_animation("Walk")
 	
 func play_animation(anim):
