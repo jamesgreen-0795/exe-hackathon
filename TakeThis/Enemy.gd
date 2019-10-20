@@ -13,6 +13,7 @@ func _ready():
 	global_position = pointA
 	step = (pointB - pointA) / speed
 	direction = 1
+	get_node("KinematicBody2D/Sprite").set_flip_h(true)
 	
 func _process(delta):
 	if direction == 1:
@@ -20,11 +21,13 @@ func _process(delta):
 			global_position += step
 		else:
 			direction = 0
+			get_node("KinematicBody2D/Sprite").set_flip_h(false)
 	else:
 		if exceeded(global_position, -step, pointA):
 			global_position -= step
 		else:
 			direction = 1
+			get_node("KinematicBody2D/Sprite").set_flip_h(true)
 
 func exceeded(current, s, target):
 	if s.x > 0:
