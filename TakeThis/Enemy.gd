@@ -7,6 +7,8 @@ export var speed :int #Number of frames
 var direction
 var step
 
+var wounded = false
+
 var has_gravity = true
 var is_dead = false
 
@@ -71,6 +73,12 @@ func remove_gravity():
 	angular_velocity = 10
 	linear_velocity.x = 0
 	has_gravity = false
+
+func wound():
+	if not wounded:
+		wounded = true
+	else:
+		die()
 
 func _on_Enemy_body_entered(body):
 	if body.name == "Player":

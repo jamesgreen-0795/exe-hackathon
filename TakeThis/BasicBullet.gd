@@ -35,4 +35,7 @@ func _on_BasicBullet_body_entered(body):
 		if itemType == "antigrav":
 			body.remove_gravity()
 		else:
-			body.die()
+			if itemType == "spoon":
+				body.wound()
+			else:
+				body.die()
