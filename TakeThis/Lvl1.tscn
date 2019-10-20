@@ -12,6 +12,7 @@
 [node name="Lvl1" type="Node2D"]
 
 [node name="Floors" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Slope" parent="Floors" instance=ExtResource( 1 )]
 position = Vector2( 300, 500 )
