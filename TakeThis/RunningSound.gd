@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends AudioStreamPlayer
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -6,14 +6,16 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	draw()
+	pass # Replace with function body.
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
 
-func draw():
-	get_node("Lives").text = str(PlayerGlobals.lives)	
+func _on_Player_player_walk_ground():
+	playing = true
 
-func _on_HeartBody_lives_changed():
-	draw()
+
+func _on_Player_player_stop():
+	playing = false
