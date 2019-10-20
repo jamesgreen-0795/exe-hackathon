@@ -10,14 +10,9 @@
 
 [node name="Lvl1" type="Node2D"]
 
-<<<<<<< HEAD
-[node name="Floors" type="Node" parent="."]
-editor/display_folded = true
-=======
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 116.849, 149.055 )
 fall_death = 1000
->>>>>>> 8112d55d321ff82b6ae4ae5def693599541a95e2
 
 [node name="Floors" type="Node" parent="."]
 
