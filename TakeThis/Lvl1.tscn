@@ -11,10 +11,11 @@
 [node name="Lvl1" type="Node2D"]
 
 [node name="Floors" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Floor" parent="Floors" instance=ExtResource( 1 )]
 position = Vector2( 20, 580 )
+is_end = true
+is_right = false
 
 [node name="Floor15" parent="Floors" instance=ExtResource( 1 )]
 position = Vector2( 1060, 440 )
@@ -63,6 +64,7 @@ position = Vector2( 1660, 420 )
 
 [node name="Floor7" parent="Floors" instance=ExtResource( 1 )]
 position = Vector2( 260, 580 )
+is_end = true
 
 [node name="Floor8" parent="Floors" instance=ExtResource( 1 )]
 position = Vector2( 1300, 580 )
