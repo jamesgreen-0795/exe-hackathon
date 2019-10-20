@@ -27,6 +27,7 @@ tracks/0/keys = {
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 90, 70 )
 script = ExtResource( 1 )
+friction = 0.05
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.9, 1.1 )
