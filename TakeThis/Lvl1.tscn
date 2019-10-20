@@ -19,7 +19,6 @@ position = Vector2( 131.457, 183.07 )
 fall_death = 1000
 
 [node name="Floors" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Floor" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 12.0105, 561.42 )
@@ -70,8 +69,9 @@ is_right = false
 position = Vector2( 202.905, 561.42 )
 is_end = true
 
-[node name="Floor39" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 2917, 270 )
+[node name="Floor48" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 2810, 270 )
+is_end = true
 
 [node name="Floor91" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1420, 460 )
@@ -122,16 +122,23 @@ position = Vector2( 3057, 270 )
 
 [node name="Floor52" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 2937, 270 )
+is_end = true
 
 [node name="Floor90" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1540, 460 )
 is_end = true
 
 [node name="Floor96" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 1790, 420 )
+position = Vector2( 1780, 420 )
+
+[node name="Floor98" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1820, 420 )
+
+[node name="Floor100" parent="Floors" instance=ExtResource( 2 )]
+position = Vector2( 1860, 420 )
 
 [node name="Floor99" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 1920, 420 )
+position = Vector2( 1900.81, 420 )
 is_end = true
 
 [node name="Floor33" parent="Floors" instance=ExtResource( 2 )]
@@ -239,13 +246,6 @@ pointA = Vector2( 500, 429 )
 pointB = Vector2( 600, 429 )
 speed = 300
 
-[node name="Enemy5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3105.94, 240 )
-physics_material_override = SubResource( 1 )
-pointA = Vector2( 3035.94, 240 )
-pointB = Vector2( 3145.94, 240 )
-speed = 300
-
 [node name="Enemy6" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3145.94, 240 )
 physics_material_override = SubResource( 1 )
@@ -253,18 +253,11 @@ pointA = Vector2( 3045.94, 240 )
 pointB = Vector2( 3155.94, 240 )
 speed = 300
 
-[node name="Enemy2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 910, 390 )
-physics_material_override = SubResource( 1 )
-pointA = Vector2( 750, 390 )
-pointB = Vector2( 910, 390 )
-speed = 300
-
 [node name="Enemy3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1290, -100 )
 physics_material_override = SubResource( 1 )
-pointA = Vector2( 950, 400 )
-pointB = Vector2( 1190, 400 )
+pointA = Vector2( 970, 415 )
+pointB = Vector2( 1190, 415 )
 speed = 300
 
 [node name="Enemy4" parent="." instance=ExtResource( 4 )]
