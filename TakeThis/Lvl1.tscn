@@ -49,7 +49,7 @@ is_end = true
 position = Vector2( 180, 585 )
 
 [node name="Floor9" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 2825.78, 218.938 )
+position = Vector2( 2777, 270 )
 is_end = true
 is_right = false
 
@@ -68,7 +68,7 @@ position = Vector2( 220, 585 )
 is_end = true
 
 [node name="Floor38" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 2865.78, 218.938 )
+position = Vector2( 2817, 270 )
 
 [node name="Floor81" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1420, 460 )
@@ -81,7 +81,7 @@ position = Vector2( 410.796, 520 )
 is_end = true
 
 [node name="Floor8" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 2905.78, 218.938 )
+position = Vector2( 2857, 270 )
 
 [node name="Floor82" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1460, 460 )
@@ -100,13 +100,13 @@ is_end = true
 is_right = false
 
 [node name="Floor34" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3065.78, 218.938 )
+position = Vector2( 3017, 270 )
 
 [node name="Floor54" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3025.78, 218.938 )
+position = Vector2( 2977, 270 )
 
 [node name="Floor53" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 2945.78, 218.938 )
+position = Vector2( 2897, 270 )
 
 [node name="Floor83" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1500, 460 )
@@ -115,10 +115,10 @@ position = Vector2( 1500, 460 )
 position = Vector2( 1740, 420 )
 
 [node name="Floor32" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3105.78, 218.938 )
+position = Vector2( 3057, 270 )
 
 [node name="Floor52" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 2985.78, 218.938 )
+position = Vector2( 2937, 270 )
 
 [node name="Floor80" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1540, 460 )
@@ -131,35 +131,32 @@ position = Vector2( 1780, 420 )
 position = Vector2( 1820, 420 )
 is_end = true
 
-[node name="Floor91" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 1900, 420 )
-
 [node name="Floor33" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3145.78, 218.938 )
+position = Vector2( 3097, 270 )
 
 [node name="Floor45" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3185.78, 218.938 )
+position = Vector2( 3137, 270 )
 
 [node name="Floor20" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 511.018, 440 )
+position = Vector2( 511.018, 460 )
 is_end = true
 is_right = false
 
 [node name="Floor51" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3225.78, 218.938 )
+position = Vector2( 3177, 270 )
 
 [node name="Floor21" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 551.018, 440 )
+position = Vector2( 551.018, 460 )
 
 [node name="Floor49" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3265.78, 218.938 )
+position = Vector2( 3217, 270 )
 
 [node name="Floor22" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 591.018, 440 )
+position = Vector2( 591.018, 460 )
 is_end = true
 
 [node name="Floor47" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3305.78, 218.938 )
+position = Vector2( 3257, 270 )
 
 [node name="Floor23" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 2419.8, 295.2 )
@@ -167,31 +164,31 @@ is_end = true
 is_right = false
 
 [node name="Floor46" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3345.78, 218.938 )
+position = Vector2( 3297, 270 )
 
 [node name="Floor24" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 2459.8, 295.2 )
 
 [node name="Floor50" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3385.78, 218.938 )
+position = Vector2( 3337, 270 )
 
 [node name="Floor25" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 2499.8, 295.2 )
 
 [node name="Floor44" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3425.78, 218.938 )
+position = Vector2( 3377, 270 )
 
 [node name="Floor26" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 2539.8, 295.2 )
 
 [node name="Floor43" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3465.78, 218.938 )
+position = Vector2( 3417, 270 )
 
 [node name="Floor27" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 2579.8, 295.2 )
 
 [node name="Floor48" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3505.78, 218.938 )
+position = Vector2( 3457, 270 )
 
 [node name="Floor28" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 2619.8, 295.2 )
@@ -203,14 +200,14 @@ is_end = true
 is_right = false
 
 [node name="Floor41" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3545.78, 218.938 )
+position = Vector2( 3497, 270 )
 
 [node name="Floor29" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 799.894, 410 )
 is_end = true
 
 [node name="Floor39" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3585.78, 218.938 )
+position = Vector2( 3537, 270 )
 
 [node name="Floor30" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 980, 440 )
@@ -218,13 +215,13 @@ is_end = true
 is_right = false
 
 [node name="Floor42" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3625.78, 218.938 )
+position = Vector2( 3577, 270 )
 
 [node name="Floor31" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 1020, 440 )
 
 [node name="Floor40" parent="Floors" instance=ExtResource( 2 )]
-position = Vector2( 3665.78, 218.938 )
+position = Vector2( 3617, 270 )
 is_end = true
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -233,10 +230,24 @@ position = Vector2( -100, -520 )
 texture = ExtResource( 3 )
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 600, 410 )
+position = Vector2( 600, 429 )
 physics_material_override = SubResource( 1 )
-pointA = Vector2( 500, 410 )
-pointB = Vector2( 600, 410 )
+pointA = Vector2( 500, 429 )
+pointB = Vector2( 600, 429 )
+speed = 300
+
+[node name="Enemy5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3105.84, 240 )
+physics_material_override = SubResource( 1 )
+pointA = Vector2( 3035.84, 240 )
+pointB = Vector2( 3145.84, 240 )
+speed = 300
+
+[node name="Enemy6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3145.84, 240 )
+physics_material_override = SubResource( 1 )
+pointA = Vector2( 3045.84, 240 )
+pointB = Vector2( 3155.84, 240 )
 speed = 300
 
 [node name="Enemy2" parent="." instance=ExtResource( 4 )]
@@ -266,10 +277,22 @@ pointA = Vector2( 1940, 220 )
 pointB = Vector2( 1940, 420 )
 speed = 150
 
+[node name="MovingFloor4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1808, -300 )
+pointA = Vector2( 1908, 220 )
+pointB = Vector2( 1908, 420 )
+speed = 150
+
 [node name="MovingFloor2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1920, -300 )
 pointA = Vector2( 2020, 220 )
 pointB = Vector2( 2340, 220 )
+speed = 150
+
+[node name="MovingFloor3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1952, -300 )
+pointA = Vector2( 2052, 220 )
+pointB = Vector2( 2362, 220 )
 speed = 150
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -280,4 +303,4 @@ margin_right = 40.0
 margin_bottom = 14.0
 
 [node name="Door" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3630, 160 )
+position = Vector2( 3581.22, 203.898 )
