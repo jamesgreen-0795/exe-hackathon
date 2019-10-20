@@ -13,7 +13,7 @@
 [node name="Lvl1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 116.849, 149.055 )
+position = Vector2( 410.796, 380 )
 fall_death = 1000
 
 [node name="Floors" type="Node" parent="."]
