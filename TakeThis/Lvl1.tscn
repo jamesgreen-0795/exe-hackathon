@@ -303,6 +303,7 @@ script = ExtResource( 6 )
 
 [node name="Door" parent="." instance=ExtResource( 7 )]
 position = Vector2( 3585.12, 207.242 )
+z_index = 30
 next_level_item_name = "A Fireball"
 
 [node name="HUD" parent="." instance=ExtResource( 8 )]

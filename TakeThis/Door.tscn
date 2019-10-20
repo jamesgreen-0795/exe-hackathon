@@ -19,8 +19,6 @@ texture = ExtResource( 2 )
 position = Vector2( 30, 40 )
 shape = SubResource( 1 )
 
-[node name="TweenLevel" type="Tween" parent="."]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
@@ -45,4 +43,6 @@ valign = 1
 autowrap = true
 uppercase = true
 script = ExtResource( 4 )
+
+[node name="TweenLevel" type="Tween" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]
