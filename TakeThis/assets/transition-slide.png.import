@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/test_background.png-4b008a562ba5a89c20ca8932307e9b41.stex"
+path="res://.import/transition-slide.png-66304f7e0eb7b2829faef67231a9539d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test_background.png"
-dest_files=[ "res://.import/test_background.png-4b008a562ba5a89c20ca8932307e9b41.stex" ]
+source_file="res://assets/transition-slide.png"
+dest_files=[ "res://.import/transition-slide.png-66304f7e0eb7b2829faef67231a9539d.stex" ]
 
 [params]
 
