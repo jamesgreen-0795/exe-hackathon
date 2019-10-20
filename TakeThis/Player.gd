@@ -13,6 +13,7 @@ var last_direction = 0
 
 export (int) var shoot_cooldown = 50
 var current_cooldown = 0
+onready var nodeItemSpoon = get_node("ItemSpoon")
 
 export (float, 0, 1.0) var friction = 0.5
 export (float, 0, 1.0) var acceleration = 0.25
@@ -29,11 +30,13 @@ func get_input():
 	if Input.is_action_pressed("ui_right"):
 		dir += 1
 		get_node("Sprite").set_flip_h(false)
-		get_node("ItemSpoon").set_flip_h(false)
+		nodeItemSpoon.set_flip_h(false)
+		nodeItemSpoon.position.x = abs(nodeItemSpoon.position.x)
 	if Input.is_action_pressed("ui_left"):
 		dir -= 1
 		get_node("Sprite").set_flip_h(true)
-		get_node("ItemSpoon").set_flip_h(true)
+		nodeItemSpoon.set_flip_h(true)
+		nodeItemSpoon.position.x = -abs(nodeItemSpoon.position.x)
 	if dir != 0:
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
@@ -81,15 +84,15 @@ func player_direction(x_component):
 
 func _create_bullet():
 	var b = Bullet.instance()
-	b.position = position + get_node("ItemSpoon").transform.get_origin()
+	b.position = position + nodeItemSpoon.transform.get_origin()
 	b.itemType = itemType
 	get_parent().add_child(b)
 
 func show_item():
-	get_node("ItemSpoon").show()
+	nodeItemSpoon.show()
 
 func hide_item():
-	get_node("ItemSpoon").hide()
+	nodeItemSpoon.hide()
 
 func die():
 	queue_free()
