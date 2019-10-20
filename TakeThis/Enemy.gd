@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 export var pointA :Vector2
 export var pointB :Vector2
@@ -13,7 +13,7 @@ func _ready():
 	global_position = pointA
 	step = (pointB - pointA) / speed
 	direction = 1
-	get_node("KinematicBody2D/Sprite").set_flip_h(true)
+	get_node("Sprite").set_flip_h(true)
 	
 func _process(delta):
 	if direction == 1:
@@ -21,13 +21,13 @@ func _process(delta):
 			global_position += step
 		else:
 			direction = 0
-			get_node("KinematicBody2D/Sprite").set_flip_h(false)
+			get_node("Sprite").set_flip_h(false)
 	else:
 		if exceeded(global_position, -step, pointA):
 			global_position -= step
 		else:
 			direction = 1
-			get_node("KinematicBody2D/Sprite").set_flip_h(true)
+			get_node("Sprite").set_flip_h(true)
 
 func exceeded(current, s, target):
 	if s.x > 0:
@@ -43,3 +43,10 @@ func exceeded(current, s, target):
 		if current.y < target.y:
 			return false
 	return true
+
+func die():
+	queue_free()
+
+func _on_Enemy_body_entered(body):
+	if body.name == "Player":
+		body.die()

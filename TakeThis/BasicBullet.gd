@@ -15,3 +15,5 @@ func _ready():
 func _on_BasicBullet_body_entered(body):
 	if !(body.name == "Player"):
 		queue_free()
+	if body is Enemy:
+		body.die()
