@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/background.jpg" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://AnimationFireballItem.gd" type="Script" id=8]
 [ext_resource path="res://assets/sound/running.wav" type="AudioStream" id=9]
 [ext_resource path="res://RunningSound.gd" type="Script" id=10]
+[ext_resource path="res://assets/gun.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.9024, 20 )
@@ -116,6 +117,7 @@ script = ExtResource( 5 )
 position = Vector2( 0, 21 )
 
 [node name="ItemFireball" type="Sprite" parent="."]
+visible = false
 position = Vector2( 20, -10 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 7 )
@@ -130,6 +132,12 @@ script = ExtResource( 8 )
 [node name="RunningSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 script = ExtResource( 10 )
+
+[node name="ItemAntigrav" type="Sprite" parent="."]
+visible = false
+position = Vector2( 25, -12 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
 [connection signal="player_stop" from="." to="RunningSound" method="_on_Player_player_stop"]
 [connection signal="player_stop" from="." to="PlayerParticles" method="stop"]
 [connection signal="player_walk_ground" from="." to="RunningSound" method="_on_Player_player_walk_ground"]
