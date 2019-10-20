@@ -5,6 +5,7 @@ class_name Player
 export (int) var speed = 300
 export (int) var jump_speed = -350
 export (int) var gravity = 1000
+export (int) var fall_death = 10000
 
 var velocity = Vector2.ZERO
 var Bullet = preload("res://BasicBullet.tscn")
@@ -44,6 +45,8 @@ func get_input():
 
 
 func _physics_process(delta):
+	if global_position.y > fall_death:
+		die()
 	current_cooldown -= 1
 	
 	if current_cooldown == 0:
