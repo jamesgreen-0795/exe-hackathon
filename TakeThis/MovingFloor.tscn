@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://MovingFloor.gd" type="Script" id=1]
-[ext_resource path="res://assets/test-assets/blue-square.png" type="Texture" id=2]
+[ext_resource path="res://assets/MovingFloor.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20, 20 )
+extents = Vector2( 19.0001, 4.94395 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -22,9 +22,10 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+rotation = 3.14159
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
-position = Vector2( -9.53674e-07, 9.53674e-07 )
-scale = Vector2( 1.25, 1.25 )
+position = Vector2( 0.174824, 4.54544 )
+scale = Vector2( 0.1501, 0.15748 )
 frames = SubResource( 2 )

@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Label
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -6,13 +6,8 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	text = str(PlayerGlobals.lives)	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func draw():
-	get_node("Lives").text = str(PlayerGlobals.lives)	
-
-func _on_HeartBody_lives_changed():
-	draw()
