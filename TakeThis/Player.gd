@@ -5,18 +5,18 @@ class_name Player
 export (int) var speed = 300
 export (int) var jump_speed = -350
 export (int) var gravity = 1000
+export (int) var fall_death = 10000
 
 var velocity = Vector2.ZERO
 var Bullet = preload("res://BasicBullet.tscn")
 var last_direction = 0
 
+export (int) var shoot_cooldown = 50
+var current_cooldown = 0
+
 export (float, 0, 1.0) var friction = 0.5
 export (float, 0, 1.0) var acceleration = 0.25
 export var itemType = "spoon"
-
-signal player_stopped
-signal player_left
-signal player_right
 
 func _ready():
 	play_animation("Walk")
@@ -38,11 +38,19 @@ func get_input():
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
-	if Input.is_mouse_button_pressed(1):
+	if Input.is_mouse_button_pressed(1) and current_cooldown <= 0:
 		_create_bullet()
+		hide_item()		
+		current_cooldown = shoot_cooldown
 
 
 func _physics_process(delta):
+	if global_position.y > fall_death:
+		die()
+	current_cooldown -= 1
+	
+	if current_cooldown == 0:
+		show_item()
 	
 	# custom parallaxing based on player position
 	var backgroundNode = get_node("Camera2D/CanvasLayer/ParallaxBackground/Sprite")
@@ -73,9 +81,15 @@ func player_direction(x_component):
 
 func _create_bullet():
 	var b = Bullet.instance()
-	b.position = position
+	b.position = position + get_node("ItemSpoon").transform.get_origin()
 	b.itemType = itemType
 	get_parent().add_child(b)
+
+func show_item():
+	get_node("ItemSpoon").show()
+
+func hide_item():
+	get_node("ItemSpoon").hide()
 
 func die():
 	queue_free()

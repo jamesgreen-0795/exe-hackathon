@@ -84,6 +84,3 @@ frame = 4
 [node name="AnimationSpoon" type="AnimationPlayer" parent="."]
 anims/Spoon = SubResource( 3 )
 script = ExtResource( 5 )
-[connection signal="player_left" from="." to="." method="_on_Player_player_left"]
-[connection signal="player_right" from="." to="." method="_on_Player_player_right"]
-[connection signal="player_stopped" from="." to="." method="_on_Player_player_stopped"]
