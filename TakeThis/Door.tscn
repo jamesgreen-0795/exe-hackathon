@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Door.gd" type="Script" id=1]
 [ext_resource path="res://assets/door.png" type="Texture" id=2]
+[ext_resource path="res://assets/transition-slide.png" type="Texture" id=3]
+[ext_resource path="res://Label.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -16,4 +18,31 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 30, 40 )
 shape = SubResource( 1 )
+
+[node name="TweenLevel" type="Tween" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 800.0
+margin_bottom = 450.0
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 187.309
+margin_top = 267.203
+margin_right = 607.309
+margin_bottom = 346.203
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.223529, 0.223529, 0.223529, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+script = ExtResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]
