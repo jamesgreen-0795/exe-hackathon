@@ -12,19 +12,19 @@ script/source = "extends Sprite
 onready var Hero = get_tree().get_root().get_node(\"/Main/Lvl1\")
 
 func _ready():
-    # Called every time the node is added to the scene.
-    # Initialization here
-    set_fixed_process(true)
+	# Called every time the node is added to the scene.
+	# Initialization here
+	set_fixed_process(true)
 
 
 func _fixed_process(delta):
-    if(click.check() == 2):
+	if(click.check() == 2):
 
 
-        print(\"Clicked!\")
-        Hero.set_dir(\"LEFT\")
-        sprite.set_texture(Hero.left)
-        Hero.move(Vector2(-Hero.speed,0.0)*Hero.delta)"
+		print(\"Clicked!\")
+		Hero.set_dir(\"LEFT\")
+		sprite.set_texture(Hero.left)
+		Hero.move(Vector2(-Hero.speed,0.0)*Hero.delta)"
 
 [node name="Main" type="Node2D"]
 position = Vector2( 100, 520 )

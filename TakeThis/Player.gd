@@ -6,6 +6,7 @@ export (int) var speed = 300
 export (int) var jump_speed = -350
 export (int) var gravity = 1000
 export (int) var fall_death = 10000
+export  var level = "Lvl1"
 
 var velocity = Vector2.ZERO
 var Bullet = preload("res://BasicBullet.tscn")
@@ -95,4 +96,11 @@ func hide_item():
 	nodeItemSpoon.hide()
 
 func die():
+	PlayerGlobals.lives -= 1
+	
+	if PlayerGlobals.lives < 0:
+		PlayerGlobals.lives = PlayerGlobals.default_lives
+		get_tree().change_scene("res://Lvl1.tscn")
+	else:
+		get_tree().change_scene("res://" + level + ".tscn")
 	queue_free()
