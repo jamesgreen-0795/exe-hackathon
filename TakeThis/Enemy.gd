@@ -27,6 +27,7 @@ func _process(delta):
 		rotation_degrees += addedRotation
 		linear_velocity.x = 0
 		get_node("Sprite").modulate.a -= 0.1
+		get_node("Sprite").modulate.r += 5
 	
 	if has_gravity:
 		if direction == 1:
