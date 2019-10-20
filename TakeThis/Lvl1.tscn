@@ -17,6 +17,7 @@ position = Vector2( 116.849, 149.055 )
 fall_death = 1000
 
 [node name="Floors" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Floor" parent="Floors" instance=ExtResource( 2 )]
 position = Vector2( 20, 585 )
@@ -296,6 +297,7 @@ pointB = Vector2( 2362, 220 )
 speed = 150
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 script = ExtResource( 6 )
 
 [node name="Lives" type="Label" parent="CanvasLayer"]
