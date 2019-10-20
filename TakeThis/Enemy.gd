@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 export var pointA :Vector2
 export var pointB :Vector2
