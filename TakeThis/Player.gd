@@ -12,6 +12,7 @@ var last_direction = 0
 
 export (float, 0, 1.0) var friction = 0.5
 export (float, 0, 1.0) var acceleration = 0.25
+export var itemType = "spoon"
 
 signal player_stopped
 signal player_left
@@ -51,25 +52,10 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = jump_speed
 	
-	var new_direction = player_direction(velocity.x)
-	
-	if new_direction != last_direction:
-		emit_direction_signal(new_direction)
-		
 	# Animate the player walking by the velocity the player moves.
 	# capped to 2 times normal playing speed
 	get_node("AnimationPlayer").playback_speed = min(velocity.x * delta, 2)
 	
-	last_direction = new_direction
-
-func emit_direction_signal(direction):
-	if direction == 1:
-		emit_signal("player_right")
-	if direction == 0:
-		emit_signal("player_stopped")
-	if direction == -1:
-		emit_signal("player_left")
-		
 
 func player_direction(x_component):
 	if x_component > 0:
@@ -83,16 +69,8 @@ func player_direction(x_component):
 func _create_bullet():
 	var b = Bullet.instance()
 	b.position = position
+	b.itemType = itemType
 	get_parent().add_child(b)
 
-func _on_Player_player_left():
-	print_debug("left")
-	play_animation("Walk")
-
-func _on_Player_player_right():
-	print_debug("right")
-	play_animation("Walk")
-	
-func _on_Player_player_stopped():
-	print_debug("stopped")
-	play_animation("Walk")
+func die():
+	queue_free()
