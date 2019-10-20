@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/background.jpg" type="Texture" id=2]
 [ext_resource path="res://assets/player.png" type="Texture" id=3]
 [ext_resource path="res://assets/spoon.png" type="Texture" id=4]
 [ext_resource path="res://AnimationSpoon.gd" type="Script" id=5]
+[ext_resource path="res://WalkingParticles.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.9024, 20 )
@@ -88,3 +89,8 @@ frame = 4
 [node name="AnimationSpoon" type="AnimationPlayer" parent="."]
 anims/Spoon = SubResource( 3 )
 script = ExtResource( 5 )
+
+[node name="PlayerParticles" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, 21 )
+[connection signal="player_stop" from="." to="PlayerParticles" method="stop"]
+[connection signal="player_walk_ground" from="." to="PlayerParticles" method="start"]

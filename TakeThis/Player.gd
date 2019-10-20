@@ -12,6 +12,8 @@ var velocity = Vector2.ZERO
 var Bullet = preload("res://BasicBullet.tscn")
 var last_direction = 0
 
+var stopped = 1
+
 export (int) var shoot_cooldown = 50
 var current_cooldown = 0
 onready var nodeItemSpoon = get_node("ItemSpoon")
@@ -19,6 +21,9 @@ onready var nodeItemSpoon = get_node("ItemSpoon")
 export (float, 0, 1.0) var friction = 0.5
 export (float, 0, 1.0) var acceleration = 0.25
 export var itemType = "spoon"
+
+signal player_walk_ground
+signal player_stop
 
 func _ready():
 	play_animation("Walk")
@@ -69,6 +74,15 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = jump_speed
 	
+	if ((is_on_floor() and velocity.x < 10 and velocity.x > -10) or not is_on_floor()) and stopped == 0:
+		print_debug("stop")
+		emit_signal("player_stop")
+		stopped = 1
+	if is_on_floor() and (velocity.x > 10 or velocity.x < -10) and stopped == 1:
+		print_debug("start")		
+		emit_signal("player_walk_ground")
+		stopped = 0 
+		
 	# Animate the player walking by the velocity the player moves.
 	# capped to 2 times normal playing speed
 	get_node("AnimationPlayer").playback_speed = min(velocity.x * delta, 2)
@@ -104,3 +118,5 @@ func die():
 	else:
 		get_tree().change_scene("res://" + level + ".tscn")
 	queue_free()
+
+
