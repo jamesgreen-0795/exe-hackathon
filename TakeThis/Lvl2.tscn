@@ -17,6 +17,7 @@ level = "Lvl2"
 
 [node name="Door" parent="Player" instance=ExtResource( 2 )]
 position = Vector2( 2702.05, -164 )
+next_level = "Lvl3"
 
 [node name="Floors" type="Node" parent="."]
 
