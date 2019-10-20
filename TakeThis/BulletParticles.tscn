@@ -11,10 +11,13 @@ orbit_velocity_random = 0.0
 linear_accel = 1.0
 damping = 22.0
 scale = 3.0
-color = Color( 0.717647, 0.752941, 0.054902, 1 )
+color = Color( 0.972549, 0, 0.25098, 0.294118 )
 
 [node name="Particles2D" type="Particles2D"]
+z_index = 25
 emitting = false
 one_shot = true
 preprocess = 0.25
+explosiveness = 0.1
+randomness = 0.1
 process_material = SubResource( 1 )
