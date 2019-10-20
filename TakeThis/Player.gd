@@ -25,8 +25,10 @@ func get_input():
 	var dir = 0
 	if Input.is_action_pressed("ui_right"):
 		dir += 1
+		get_node("Sprite").set_flip_h(false)
 	if Input.is_action_pressed("ui_left"):
 		dir -= 1
+		get_node("Sprite").set_flip_h(true)
 	if dir != 0:
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
@@ -49,6 +51,10 @@ func _physics_process(delta):
 	
 	if new_direction != last_direction:
 		emit_direction_signal(new_direction)
+		
+	# Animate the player walking by the velocity the player moves.
+	# capped to 2 times normal playing speed
+	get_node("AnimationPlayer").playback_speed = min(velocity.x * delta, 2)
 	
 	last_direction = new_direction
 
