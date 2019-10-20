@@ -20,7 +20,7 @@ onready var nodeItem;
 
 export (float, 0, 1.0) var friction = 0.5
 export (float, 0, 1.0) var acceleration = 0.25
-export var itemType = "fireball"
+export var itemType = "spoon"
 
 signal player_walk_ground
 signal player_stop

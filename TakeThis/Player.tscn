@@ -116,6 +116,7 @@ script = ExtResource( 5 )
 position = Vector2( 0, 21 )
 
 [node name="ItemFireball" type="Sprite" parent="."]
+visible = false
 position = Vector2( 20, -10 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 7 )
